@@ -1,3 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Medi-AI</string>
+    <string name="app_name">Medi AI</string>
+    <string name="login_subtitle">Tu salud, organizada y asistida por IA.</string>
+    <string name="chat_title">Medi AI</string>
+    <string name="chat_subtitle">Asistente virtual para dudas sobre medicamentos</string>
+    <string name="medical_disclaimer">Medi AI brinda información general y ayuda para organizar recordatorios. No sustituye la consulta médica profesional. Ante síntomas graves, reacciones adversas o dudas sobre dosis, consulta a un profesional de salud.</string>
+
+    <!-- Login -->
+    <string name="email_hint">Correo electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="register_link">Crear una cuenta nueva</string>
+    <string name="view_documentation">Ver Documentación del Proyecto</string>
+    <string name="login_error_empty">Por favor completa todos los campos</string>
+    <string name="login_error_invalid">Correo o contraseña incorrectos</string>
+
+    <!-- Register -->
+    <string name="full_name_hint">Nombre completo</string>
+    <string name="register_button">Registrarse</string>
+    <string name="back_to_login">Volver al Login</string>
+    <string name="register_error_name">El nombre debe tener al menos 3 caracteres</string>
+    <string name="register_error_email">Correo electrónico inválido</string>
+    <string name="register_error_password">La contraseña debe tener al menos 6 caracteres</string>
+    <string name="register_error_email_exists">Este correo ya está registrado</string>
+    <string name="register_success">Registro exitoso. Ahora puedes iniciar sesión.</string>
+
+    <!-- Bottom Nav -->
+    <string name="nav_home">Inicio</string>
+    <string name="nav_reports">Historial</string>
+    <string name="nav_chat">Medi AI</string>
+    <string name="nav_add">Agregar</string>
+    <string name="nav_logout">Salir</string>
+
+    <!-- Home -->
+    <string name="morning_greeting">Buenos días, %1$s 👋</string>
+    <string name="afternoon_greeting">Buenas tardes, %1$s 👋</string>
+    <string name="evening_greeting">Buenas noches, %1$s 👋</string>
+    <string name="todays_summary">Resumen de hoy</string>
+    <string name="doses_taken_format">%1$d / %2$d tomados</string>
+    <string name="upcoming_reminders">Próximos recordatorios</string>
+    <string name="add_medication">Agregar Nuevo Medicamento</string>
+    <string name="mark_as_taken">Marcar como tomado</string>
+    <string name="no_medications">No hay medicamentos registrados</string>
+    <string name="status_taken">Tomado</string>
+    <string name="status_missed">Omitido</string>
+    <string name="status_pending">Pendiente</string>
+
+    <!-- Add Medication -->
+    <string name="add_medication_title">Agregar Medicamento</string>
+    <string name="edit_medication_title">Editar Medicamento</string>
+    <string name="medication_name_hint">Nombre del medicamento</string>
+    <string name="dose_hint">Dosis (ej: 1 cápsula)</string>
+    <string name="time_hint">Hora (HH:MM)</string>
+    <string name="frequency_label">Frecuencia</string>
+    <string name="frequency_every_8h">Cada 8 horas</string>
+    <string name="frequency_every_12h">Cada 12 horas</string>
+    <string name="frequency_once_daily">Una vez al día</string>
+    <string name="frequency_custom">Personalizada</string>
+    <string name="notes_hint">Notas adicionales (opcional)</string>
+    <string name="save_medication">Guardar Medicamento</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete_medication">Eliminar Medicamento</string>
+    <string name="delete_confirm">¿Estás seguro de eliminar este medicamento?</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="medication_saved">Medicamento guardado exitosamente</string>
+    <string name="medication_deleted">Medicamento eliminado</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Eliminar</string>
+
+    <!-- Reports -->
+    <string name="reports_title">Historial y Reportes</string>
+    <string name="weekly_summary">Resumen Semanal</string>
+    <string name="adherence_percentage">Adherencia: %1$d%%</string>
+    <string name="doses_taken">Dosis tomadas: %1$d</string>
+    <string name="doses_missed">Dosis omitidas: %1$d</string>
+    <string name="recent_logs">Últimos registros</string>
+    <string name="export_pdf">Exportar Reporte (PDF)</string>
+    <string name="export_success">Reporte exportado exitosamente</string>
+    <string name="no_data">No hay datos disponibles</string>
+
+    <!-- Chat -->
+    <string name="chat_message_hint">Escribe tu mensaje…</string>
+    <string name="chat_send">Enviar</string>
+    <string name="chat_typing">Medi AI está escribiendo…</string>
+    <string name="chat_error_network">Error de conexión. Verifica tu internet.</string>
+    <string name="chat_error_api">Error al obtener respuesta. Intenta de nuevo.</string>
+
+    <!-- Info -->
+    <string name="info_title">Documentación del Proyecto</string>
+    <string name="problem_statement_title">Planteamiento del Problema</string>
+    <string name="general_objective_title">Objetivo General</string>
+    <string name="specific_objectives_title">Objetivos Específicos</string>
+    <string name="functional_req_title">Requerimientos Funcionales</string>
+    <string name="system_design_title">Diseño del Sistema</string>
+    <string name="technical_procedure_title">Procedimiento Técnico</string>
+    <string name="conclusions_title">Conclusiones y Recomendaciones</string>
+    <string name="bibliography_title">Bibliografía Básica</string>
+
+    <!-- Logout -->
+    <string name="logout_confirm">¿Estás seguro de cerrar sesión?</string>
+    <string name="logout_title">Cerrar Sesión</string>
+
+    <!-- General -->
+    <string name="ok">Aceptar</string>
+    <string name="error">Error</string>
+    <string name="success">Éxito</string>
+    <string name="loading">Cargando…</string>
+    <string name="empty_field_error">Este campo no puede estar vacío</string>
+    <string name="app_description">Aplicación móvil para gestión de medicamentos y asistencia por IA</string>
+
+    <!-- Permissions -->
+    <string name="notification_permission_title">Permiso de Notificaciones</string>
+    <string name="notification_permission_message">Medi AI necesita permiso para enviar recordatorios de tus medicamentos.</string>
+    <string name="allow">Permitir</string>
+    <string name="deny">Denegar</string>
+
+    <!-- Notification Channel -->
+    <string name="notification_channel_name">Recordatorios de Medicamentos</string>
+    <string name="notification_channel_desc">Notificaciones para recordar tomar tus medicamentos</string>
+    <string name="notification_title">Recordatorio de medicamento</string>
+    <string name="notification_body_format">Es hora de tomar %1$s - %2$s</string>
 </resources>

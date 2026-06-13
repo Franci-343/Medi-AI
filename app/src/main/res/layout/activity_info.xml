@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_medium">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/info_title"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold" />
+
+        <!-- Problem Statement -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:cardCornerRadius="@dimen/corner_medium"
+            app:cardBackgroundColor="@color/surface">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="@dimen/padding_medium">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/problem_statement_title"
+                    android:textColor="@color/primary" android:textStyle="bold"
+                    android:textSize="@dimen/text_size_title" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="El olvido de medicamentos y la falta de seguimiento de dosis puede afectar la adherencia al tratamiento. Muchas personas no cuentan con una herramienta simple que centralice recordatorios, historial y apoyo informativo general."
+                    android:textColor="@color/text_secondary" android:textSize="@dimen/text_size_body" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- General Objective -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            app:cardCornerRadius="@dimen/corner_medium" app:cardBackgroundColor="@color/surface">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="@dimen/padding_medium">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/general_objective_title"
+                    android:textColor="@color/primary" android:textStyle="bold"
+                    android:textSize="@dimen/text_size_title" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="Desarrollar una aplicación móvil Android en Java llamada Medi AI para gestionar medicamentos, programar recordatorios, registrar historial de dosis y brindar apoyo informativo mediante un chat de IA."
+                    android:textColor="@color/text_secondary" android:textSize="@dimen/text_size_body" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Specific Objectives -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            app:cardCornerRadius="@dimen/corner_medium" app:cardBackgroundColor="@color/surface">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="@dimen/padding_medium">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/specific_objectives_title"
+                    android:textColor="@color/primary" android:textStyle="bold"
+                    android:textSize="@dimen/text_size_title" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="• Implementar registro e inicio de sesión local con SQLite.\n• Implementar gestión de medicamentos (CRUD).\n• Programar notificaciones locales.\n• Registrar dosis tomadas u omitidas.\n• Mostrar reportes de adherencia semanal.\n• Integrar chat IA en modo demo y compatibilidad opcional con Mistral o DeepSeek.\n• Aplicar buenas prácticas de desarrollo Android."
+                    android:textColor="@color/text_secondary" android:textSize="@dimen/text_size_body" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Functional Requirements -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            app:cardCornerRadius="@dimen/corner_medium" app:cardBackgroundColor="@color/surface">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="@dimen/padding_medium">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/functional_req_title"
+                    android:textColor="@color/primary" android:textStyle="bold"
+                    android:textSize="@dimen/text_size_title" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="• Registro de usuarios.\n• Inicio de sesión.\n• Gestión de datos local con SQLite.\n• Reportes de adherencia.\n• Notificaciones.\n• Chat de IA.\n• Cierre de sesión."
+                    android:textColor="@color/text_secondary" android:textSize="@dimen/text_size_body" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- System Design -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            app:cardCornerRadius="@dimen/corner_medium" app:cardBackgroundColor="@color/surface">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="@dimen/padding_medium">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/system_design_title"
+                    android:textColor="@color/primary" android:textStyle="bold"
+                    android:textSize="@dimen/text_size_title" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="• Casos de uso: Registro, Login, CRUD medicamentos, Reportes, Chat IA.\n• Clases principales: Activities, Fragments, DAOs, Repositories, Models.\n• Componentes: UI (XML), Repository, SQLite, API IA opcional, Notificaciones."
+                    android:textColor="@color/text_secondary" android:textSize="@dimen/text_size_body" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Technical Procedure -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            app:cardCornerRadius="@dimen/corner_medium" app:cardBackgroundColor="@color/surface">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="@dimen/padding_medium">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/technical_procedure_title"
+                    android:textColor="@color/primary" android:textStyle="bold"
+                    android:textSize="@dimen/text_size_title" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="• Lenguaje: Java.\n• IDE: Android Studio.\n• Base de datos: SQLite con SQLiteOpenHelper.\n• API IA opcional: Mistral / DeepSeek.\n• Notificaciones: AlarmManager y NotificationCompat."
+                    android:textColor="@color/text_secondary" android:textSize="@dimen/text_size_body" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Conclusions -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            app:cardCornerRadius="@dimen/corner_medium" app:cardBackgroundColor="@color/surface">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="@dimen/padding_medium">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/conclusions_title"
+                    android:textColor="@color/primary" android:textStyle="bold"
+                    android:textSize="@dimen/text_size_title" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="• La app permite mejorar la organización de medicamentos.\n• Para un proyecto académico, SQLite es suficiente y evita depender de internet.\n• Se recomienda ampliar a sincronización en la nube solo en futuras versiones.\n• Se recomienda usar backend seguro para claves de IA si alguna vez se lleva a producción."
+                    android:textColor="@color/text_secondary" android:textSize="@dimen/text_size_body" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Bibliography -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_large"
+            app:cardCornerRadius="@dimen/corner_medium" app:cardBackgroundColor="@color/surface">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="@dimen/padding_medium">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/bibliography_title"
+                    android:textColor="@color/primary" android:textStyle="bold"
+                    android:textSize="@dimen/text_size_title" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="• Documentación oficial de Android Developers.\n• Documentación de SQLite en Android.\n• Documentación de Mistral AI.\n• Documentación de DeepSeek API."
+                    android:textColor="@color/text_secondary" android:textSize="@dimen/text_size_body" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</ScrollView>
