@@ -1,5 +1,6 @@
 package com.example.mediai.ui.medication;
 
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,10 +20,15 @@ import com.example.mediai.data.repository.MedicationRepository;
 import com.example.mediai.notification.ReminderScheduler;
 import com.example.mediai.util.SessionManager;
 import com.example.mediai.util.ValidationUtils;
+import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Calendar;
+import java.util.Locale;
 
 public class AddMedicationActivity extends AppCompatActivity {
 
     private EditText etName, etDose, etTime, etNotes;
+    private TextInputLayout tilName, tilDose, tilTime;
     private RadioGroup rgFrequency;
     private Button btnSave, btnCancel, btnDelete;
     private MedicationRepository medicationRepository;
@@ -54,16 +60,46 @@ public class AddMedicationActivity extends AppCompatActivity {
         etDose = findViewById(R.id.et_dose);
         etTime = findViewById(R.id.et_time);
         etNotes = findViewById(R.id.et_notes);
+        tilName = findViewById(R.id.til_name);
+        tilDose = findViewById(R.id.til_dose);
+        tilTime = findViewById(R.id.til_time);
         rgFrequency = findViewById(R.id.rg_frequency);
         btnSave = findViewById(R.id.btn_save);
         btnCancel = findViewById(R.id.btn_cancel);
         btnDelete = findViewById(R.id.btn_delete);
+
+        // Make time field read-only to force using the picker
+        etTime.setFocusable(false);
+        etTime.setClickable(true);
     }
 
     private void setupListeners() {
         btnSave.setOnClickListener(v -> saveMedication());
         btnCancel.setOnClickListener(v -> finish());
         btnDelete.setOnClickListener(v -> deleteMedication());
+        etTime.setOnClickListener(v -> showTimePickerDialog());
+    }
+
+    private void showTimePickerDialog() {
+        Calendar calendar = Calendar.getInstance();
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+
+        // If editing, start with current medication time
+        String currentTime = etTime.getText().toString();
+        if (ValidationUtils.isValidTime(currentTime)) {
+            String[] parts = currentTime.split(":");
+            hour = Integer.parseInt(parts[0]);
+            minute = Integer.parseInt(parts[1]);
+        }
+
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,
+                (view, hourOfDay, selectedMinute) -> {
+                    String time = String.format(Locale.getDefault(), "%02d:%02d", hourOfDay, selectedMinute);
+                    etTime.setText(time);
+                    tilTime.setError(null);
+                }, hour, minute, true);
+        timePickerDialog.show();
     }
 
     private void loadMedication(long id) {
@@ -97,18 +133,29 @@ public class AddMedicationActivity extends AppCompatActivity {
         String time = etTime.getText().toString().trim();
         String notes = etNotes.getText().toString().trim();
 
+        boolean isValid = true;
+
+        tilName.setError(null);
+        tilDose.setError(null);
+        tilTime.setError(null);
+
         if (!ValidationUtils.isNotEmpty(name)) {
-            Toast.makeText(this, R.string.empty_field_error, Toast.LENGTH_SHORT).show();
-            return;
+            tilName.setError(getString(R.string.empty_field_error));
+            isValid = false;
         }
         if (!ValidationUtils.isNotEmpty(dose)) {
-            Toast.makeText(this, R.string.empty_field_error, Toast.LENGTH_SHORT).show();
-            return;
+            tilDose.setError(getString(R.string.empty_field_error));
+            isValid = false;
         }
-        if (!ValidationUtils.isValidTime(time)) {
-            Toast.makeText(this, R.string.empty_field_error, Toast.LENGTH_SHORT).show();
-            return;
+        if (!ValidationUtils.isNotEmpty(time)) {
+            tilTime.setError(getString(R.string.empty_field_error));
+            isValid = false;
+        } else if (!ValidationUtils.isValidTime(time)) {
+            tilTime.setError(getString(R.string.invalid_time_error));
+            isValid = false;
         }
+
+        if (!isValid) return;
 
         int selectedId = rgFrequency.getCheckedRadioButtonId();
         RadioButton selectedRb = findViewById(selectedId);
@@ -117,13 +164,15 @@ public class AddMedicationActivity extends AppCompatActivity {
         Medication medication;
         if (editingMedicationId > 0) {
             medication = medicationRepository.getById(editingMedicationId);
-            if (medication != null) {
-                medication.setName(name);
-                medication.setDose(dose);
-                medication.setTime(time);
-                medication.setFrequency(frequency);
-                medication.setNotes(notes);
+            if (medication == null) {
+                Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT).show();
+                return;
             }
+            medication.setName(name);
+            medication.setDose(dose);
+            medication.setTime(time);
+            medication.setFrequency(frequency);
+            medication.setNotes(notes);
         } else {
             medication = new Medication();
             medication.setUserId(sessionManager.getUserId());

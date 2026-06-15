@@ -108,6 +108,7 @@
     <string name="success">Éxito</string>
     <string name="loading">Cargando…</string>
     <string name="empty_field_error">Este campo no puede estar vacío</string>
+    <string name="invalid_time_error">Formato de hora inválido (HH:mm)</string>
     <string name="app_description">Aplicación móvil para gestión de medicamentos y asistencia por IA</string>
 
     <!-- Permissions -->
